@@ -1,10 +1,11 @@
 class IntegerHandling:
+    #Class for handling raw even and odd integers
 
-    def __int__(self, raw_numbers: list):
-        self.number = []
-        self.numbers = raw_numbers
+    def __int__(self, raw_integers: list):
+        self.integer = []
+        self.integers = raw_integers
 
-    def numbers:
-        return self.numbers
+    def numbers(self):
+        return self.integers
 
 
