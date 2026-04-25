@@ -26,7 +26,7 @@ class FileManager:
         try:
             os.makedirs(os.path.dirname(filepath), exist_ok=True)
             with open(filepath, 'w') as file:
-            output = "\n".join(map(str, data))
+            output ='\n'.join(map(str, data))
             file.write(output)
         except Exception as e:
             logging.error(f'Error writing file: {filepath}: {e}')
