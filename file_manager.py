@@ -10,12 +10,14 @@ class FileManager:
     @staticmethod
     def read_integers(filepath: str):
         """Reads file and only return list of integers"""
-        if not os.path.exists(filepath):
-            raise FileNotFoundError(f'File {filepath} not found')
         try:
+            if not os.path.exists(filepath):
+                raise FileNotFoundError(f'File {filepath} not found')
             with open(filepath, 'r') as file:
-                content = file.read().split()
-                return [int(x) for x in content if x.lstrip('-').isdigit()]
+                content = file.read()
+                words = content.split()
+                numbers = [int(x) for x in words if x.lstrip('-').isdigit()]
+                return numbers
         except Exception as e:
             logging.error(f'Error reading file to {filepath}: {e}')
             return []
