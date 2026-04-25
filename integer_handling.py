@@ -1,18 +1,23 @@
 class IntegerHandling:
-    #Class for handling raw even and odd integers
+    """Class for handling raw even and odd integers"""
 
-    def __int__(self, raw_integers: list):
+    def __init__(self, raw_integers: list):
         self._integers = []
         self.integers = raw_integers
 
+    @property
     def integers(self):
+        """Returns list of integers"""
         return self._integers
 
-    def integer(self, value):
+    @integers.setter
+    def integers(self, value):
+        """Sets list of integers"""
         sorted_integers = sorted(list(set([int(x) for x in value])))
         self._integers = sorted_integers
 
-    def filter_parity_integers(self, parity: str = "even"): -> list[int]:
+    def filter_using_parity(self, parity: str="even"):
+        """Filtering even and odd integers by parity"""
         remainder = 0 if parity == "even" else 1
-        return [n for n ]
+        return [i for i in self._integers if i % 2 == remainder]
 
