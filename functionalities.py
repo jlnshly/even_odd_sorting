@@ -13,4 +13,4 @@ class ActivityTracker:
 
     def get_runtime(self):
         delta = datetime.now() - self.start_time
-        return f"{delta.total_seconds()} seconds"
+        return f'{delta.total_seconds()} seconds'
