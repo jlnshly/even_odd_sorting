@@ -25,7 +25,7 @@ class MainProgram(ActivityTracker):
             self.log_activity(f'Total runtime: {self.get_runtime()}')
 
         except Exception as e:
-            self.log_activity()
+            self.log_activity(f'Critical Error: {e}')
 
 if __name__ == '__main__':
     app = MainProgram()
