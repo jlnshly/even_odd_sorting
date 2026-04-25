@@ -17,7 +17,7 @@ class FileManager:
                 content = file.read().split()
                 return [int(x) for x in content if x.lstrip('-').isdigit()]
         except Exception as e:
-            logging.error(f'Error reading file {filepath}: {e}')
+            logging.error(f'Error reading file to {filepath}: {e}')
             return []
 
     @staticmethod
@@ -26,7 +26,6 @@ class FileManager:
         try:
             os.makedirs(os.path.dirname(filepath), exist_ok=True)
             with open(filepath, 'w') as file:
-            output ='\n'.join(map(str, data))
-            file.write(output)
+                 output ='\n'.join(map(str, data))
         except Exception as e:
-            logging.error(f'Error writing file: {filepath}: {e}')
+            logging.error(f'Error writing file to {filepath}: {e}')
