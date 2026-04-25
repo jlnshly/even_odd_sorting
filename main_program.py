@@ -27,4 +27,7 @@ class MainProgram(ActivityTracker):
         except Exception as e:
             self.log_activity()
 
+if __name__ == '__main__':
+    app = MainProgram()
+    app.execute()
 
