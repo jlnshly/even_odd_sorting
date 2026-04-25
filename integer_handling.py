@@ -1,3 +1,5 @@
 class IntegerHandling:
-    def __int__(self, raw_number: list):
-        self._number = []
+    def __int__(self, raw_numbers: list):
+        self.number = []
+        self.numbers = raw_numbers
+
