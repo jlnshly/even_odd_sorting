@@ -6,23 +6,23 @@ class MainProgram(ActivityTracker):
     def __init__(self):
         super().__init__()
         self.files = {
-            "source": "numbers.txt",
-            "even": "even.txt",
-            "odd": "odd.txt"
+            'source' : 'numbers.txt',
+            'even': 'even.txt',
+            'odd': 'odd.txt'
         }
 
     def execute(self):
-        self.log_activity("Starting...")
+        self.log_activity('Starting...')
         try:
-            data = FileManager.read_integers(self.files["source"])
-            self.log_activity("Reading file {}".format(self.files["source"]))
+            data = FileManager.read_integers(self.files['source'])
+            self.log_activity('Reading file {}'.format(self.files['source']))
             engine = IntegerHandling()
-            evens = engine.filter_using_parity("even")
-            odds = engine.filter_using_parity("odd")
-            FileManager.write_to_file(self.files["even"], evens)
-            FileManager.write_to_file(self.files["odd"], odds)
-            self.log_activity(f"Writing File (Evens: ({len(evens)}), Odds: {len(odds)})")
-            self.log_activity(f"Total runtime: {self.get_runtime()}")
+            evens = engine.filter_using_parity('even')
+            odds = engine.filter_using_parity('odd')
+            FileManager.write_to_file(self.files['even'], evens)
+            FileManager.write_to_file(self.files['odd'], odds)
+            self.log_activity(f'Writing File (Evens: ({len(evens)}), Odds: {len(odds)})')
+            self.log_activity(f'Total runtime: {self.get_runtime()}')
 
         except Exception as e:
             self.log_activity()
