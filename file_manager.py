@@ -29,4 +29,4 @@ class FileManager:
             output = "\n".join(map(str, data))
             file.write(output)
         except Exception as e:
-            logging.error(f'Error writing file {filepath}: {e}')
+            logging.error(f'Error writing file: {filepath}: {e}')
