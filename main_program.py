@@ -24,7 +24,7 @@ class MainProgram(ActivityTracker):
             odds = engine.filter_using_parity('odd')
             FileManager.write_to_file(self.files['even'], evens)
             FileManager.write_to_file(self.files['odd'], odds)
-            self.log_activity(f'Writing File (Evens: ({len(evens)}), Odds: {len(odds)})')
+            self.log_activity(f'Writing File (Evens: ({len(evens)}), Odds: ({len(odds)}))')
             self.log_activity(f'Total runtime: {self.get_runtime()}')
 
         except Exception as e:
